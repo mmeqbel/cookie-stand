@@ -1,0 +1,48 @@
+body {
+    background-color: #c7c7c7;
+}
+.navigation-bar {
+    width: 100%;  /* i'm assuming full width */
+    height: 80px; 
+    background-color: #ffffff;
+}
+.logo {
+    width: 150px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 15px;    /* if you want it vertically middle of the navbar. */
+    float: right;
+}
+.navigation-bar > a {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    height: 80px;        /* if you want it to take the full height of the bar */
+    line-height: 80px;
+        /* if you want it vertically middle of the navbar */
+}
+
+ul li{
+    
+    padding:10px;
+    font-size:20px; font-family:raleway;
+
+}
+a {
+    text-decoration: none ;
+    font-size:20px;
+    font-family: 'Teko', sans-serif;
+     color: black;
+}
+
+a:hover {
+    color:orange;
+    text-decoration:none;
+    cursor:pointer;
+}
+article {
+color: rgb(27, 143, 33);
+}
+article h2{
+    color: rgb(62, 37, 175); 
+}
