@@ -1,10 +1,16 @@
 body {
-    background-color: #c7c7c7;
+    background-color: #f3e8e8;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 .navigation-bar {
     width: 100%;  /* i'm assuming full width */
     height: 80px; 
     background-color: #ffffff;
+    padding-left: 16px;
+    padding-right: 16px;
+
 }
 .logo {
     width: 150px;
@@ -40,9 +46,22 @@ a:hover {
     text-decoration:none;
     cursor:pointer;
 }
-article {
-color: rgb(27, 143, 33);
+article{
+    padding: 16px;
 }
+
 article h2{
-    color: rgb(62, 37, 175); 
+    color: rgb(5, 4, 7); 
 }
+table,th {
+    font-size:20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+td {
+    border: 1px solid black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(84, 134, 34);
+}
+
