@@ -6,6 +6,8 @@
  * 
  ******************************************************************/
 
+
+
 function Store(n, mHC, mxHC, cC) {  //contructor to create Store Object
     this.name = n;
     this.minHourlyCust = mHC;
@@ -44,28 +46,7 @@ var lima = new Store("Lima", 2, 16, 4.6);
 //put the five stores together
 var locations = [seattle, tokyo, dubai, paris, lima];
 
-/**
- * *****************************************************************
- * 
- *        EXECUATABLE 
- * 
- ******************************************************************/
-// set-up DOM for to be render
 
-var root = document.getElementById("cookiesData");//get the root element
-var h2 = document.createElement("h2");//set headline
-h2.textContent = 'Sales Information';
-root.append(h2);// append headline to the root
-var table = document.createElement("table");        //create the table
-table.append(getFirstRow()); //create then append the first row
-
-for (var i = 0; i < locations.length; i++) {    // loop through stores
-    cookies(locations[i]);//compute cookies per hour for each store by use cookies function
-    render(locations[i]);//render each store
-}//end for
-
-table.append(getLastRow(locations)); //create then append the last row
-root.append(table);
 
 
 /**
@@ -75,7 +56,7 @@ root.append(table);
  * 
  ******************************************************************/
 
-function render(store) {
+function render(store,table) {
     var row = document.createElement("tr");     //create row for each store
     var cookiesPerHour = store.cookiesPerHour;    //get the cookies per hour array
 
@@ -96,7 +77,8 @@ function render(store) {
     var dailyTotal = document.createElement("td");     //the last cell will hold the totalCookies 
     dailyTotal.textContent = store.getTotalCookies();
     row.append(dailyTotal);
-    table.append(row);//append row
+    table.append(row);
+
 
 }//end func
 
@@ -178,3 +160,58 @@ function getRandomIntInclusive(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
+
+const form = document.getElementById("storeForm");
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    var store = getStore(form.elements);
+    locations.push(store);
+    main(true);
+});
+
+function getStore(elements) {
+    console.log(elements)
+    var storeName = elements[1].value;
+    var minHourlyCust = elements[5].value;
+    var maxHourlyCust = elements[6].value;
+    var avgCookieCust = elements[7].value;
+
+    var s = new Store(
+        storeName,
+        minHourlyCust,
+        maxHourlyCust,
+        avgCookieCust,
+    );
+    return s;
+}
+
+
+/**
+ * *****************************************************************
+ * 
+ *        EXECUATABLE 
+ * 
+ ******************************************************************/
+// set-up DOM for to be render
+function main(clear) {
+    var root = document.getElementById("cookiesData");//get the root element
+    if(clear){
+        while (root.firstChild) {
+            root.removeChild(root.lastChild);
+          }
+    }//
+   
+    var h2 = document.createElement("h2");//set headline
+    h2.textContent = 'Sales Information';
+    root.append(h2);// append headline to the root
+    var table = document.createElement("table");        //create the table
+    table.append(getFirstRow()); //create then append the first row
+    for (var i = 0; i < locations.length; i++) {    // loop through stores
+        cookies(locations[i]);//compute cookies per hour for each store by use cookies function
+        render(locations[i],table);//render each store
+    }//end for
+
+    table.append(getLastRow(locations)); //create then append the last row
+    root.append(table);
+} 
+main(false);
