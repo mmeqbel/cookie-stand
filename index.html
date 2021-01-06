@@ -1,29 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookies</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <img class="logo" src="img/salmon.png"/>
+        <img class="logo" src="img/salmon.png" />
         <nav class="navigation-bar">
-                <a href="index.html"><b>Home</b></a>
-                <a href="sales.html"><b>Sales</b></a>
+            <a href="index.html"><b>Home</b></a>
+            <a href="sales.html"><b>Sales</b></a>
         </nav>
     </header>
     <main>
-        <section id="storesInfo">
-            
+        <section id="formSection">
+            <form id="storeForm">
+                <fieldset>
+
+                    <legend>Store:</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="sName">Name :</label>
+
+                            </td>
+                            <td>
+                                <input type="text" id="sName" name="sName" required><br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="sLocation">Location :</label>
+
+                            </td>
+                            <td>
+                                <input type="text" id="sLocation" name="sLocation" required><br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="hoursOpen">Hours Open :</label>
+
+                            </td>
+                            <td>
+                                <input type="text" id="hoursOpen" name="hoursOpen" required><br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="sContact">Contact :</label>
+
+                            </td>
+                            <td>
+                                <input type="email" id="sContact" name="sContact" required><br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="minHourCustomer">Minimum Hourly Customer:</label>
+
+                            </td>
+                            <td>
+                                <input type="number" id="minHourCustomer" name="minHourCustomer"><br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="maxHourCustomer">Maximum Hourly Customer:</label>
+                            </td>
+                            <td>
+                                <input type="number" id="maxHourCustomer" name="maxHourCustomer"><br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="avgCookie">Average Cookie Per Customer:</label>
+                            </td>
+                            <td>
+                                <input type="number" id="avgCookie" name="avgCookie" step="any"><br><br>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <input type="submit" value="Submit">
+                </fieldset>
         </section>
+        <section id="storesInfo">
+
+        </section>
+
     </main>
     <footer>
 
     </footer>
     <script src="home.js"></script>
 </body>
+
 </html>

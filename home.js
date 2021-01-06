@@ -102,4 +102,36 @@ function getAppendableDiv(store){
     return container;
 }//end appendable div
 
+const form = document.getElementById("storeForm");
+form.addEventListener('submit', (event) => {
+    
+    event.preventDefault();
+    var store=getStore(form.elements);
+    locations.push(store);
+    render(locations);
+});
+
+function getStore(elements){
+    console.log(elements)
+    var storeName=elements[1].value;
+    var location=elements[2].value;
+    var hoursOpen=elements[3].value;
+    var contact=elements[4].value;
+    var minHourlyCust=elements[5].value;
+    var maxHourlyCust=elements[6].value;
+    var avgCookieCust=elements[7].value;
+    var img="img/cutter.jpeg";
+
+    var s =new Store(
+        storeName,
+        minHourlyCust,
+        maxHourlyCust,
+        avgCookieCust,
+        location,
+        hoursOpen,
+        contact,
+        img
+        );
+        return s;
+}
 
