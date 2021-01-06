@@ -1,4 +1,11 @@
 'use strict'
+/**
+ * *****************************************************************
+ * 
+ *        STORE CONSTRUCTORE  
+ * 
+ ******************************************************************/
+
 function Store(n, mHC, mxHC, cC) {  //contructor to create Store Object
     this.name = n;
     this.minHourlyCust = mHC;
@@ -19,6 +26,13 @@ Store.prototype.getTotalCookies = function () {
     return total;
 }
 
+/**
+ * *****************************************************************
+ * 
+ *        DATA DECLARITION 
+ * 
+ ******************************************************************/
+
 //creating five Stores
 var seattle = new Store("Seattle", 20, 70, 6.3);
 var tokyo = new Store("Tokyo", 3, 24, 1.2);
@@ -30,16 +44,20 @@ var lima = new Store("Lima", 2, 16, 4.6);
 //put the five stores together
 var locations = [seattle, tokyo, dubai, paris, lima];
 
-
+/**
+ * *****************************************************************
+ * 
+ *        EXECUATABLE 
+ * 
+ ******************************************************************/
 // set-up DOM for to be render
+
 var root = document.getElementById("cookiesData");//get the root element
 var h2 = document.createElement("h2");//set headline
 h2.textContent = 'Sales Information';
 root.append(h2);// append headline to the root
 var table = document.createElement("table");        //create the table
 table.append(getFirstRow()); //create then append the first row
-
-
 
 for (var i = 0; i < locations.length; i++) {    // loop through stores
     cookies(locations[i]);//compute cookies per hour for each store by use cookies function
@@ -50,11 +68,12 @@ table.append(getLastRow(locations)); //create then append the last row
 root.append(table);
 
 
-
-
-
-
-
+/**
+ * *****************************************************************
+ * 
+ *        FUNCTIONALITY 
+ * 
+ ******************************************************************/
 
 function render(store) {
     var row = document.createElement("tr");     //create row for each store
