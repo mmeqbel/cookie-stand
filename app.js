@@ -31,8 +31,11 @@ var lima = new Store("Lima", 2, 16, 4.6);
 var locations = [seattle, tokyo, dubai, paris, lima];
 
 
+
+
 // set-up DOM for to be render
 var root = document.getElementById("cookiesData");//get the root element
+console.log(root);
 var h2 = document.createElement("h2");//set headline
 h2.textContent = 'Sales Information';
 root.append(h2);// append headline to the root
@@ -159,3 +162,4 @@ function getRandomIntInclusive(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
+module.exports = {locations};
